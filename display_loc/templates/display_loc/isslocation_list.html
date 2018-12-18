@@ -1,0 +1,21 @@
+{% extends 'index.html' %}
+{% block content %}
+    <table class="table table-hover">
+    <tr>
+        <th>ID</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
+        <th>Timestamp</th>
+    </tr>
+    {% for loc in object_list %}
+        <tr>
+            <td>{{ loc.id }}</td>
+            <td>{{ loc.latitude }}</td>
+            <td>{{ loc.longitude }}</td>
+            <td>{{ loc.timestamp }}</td>
+        </tr>
+    {% empty %}
+    No values yet.
+    {% endfor %}
+    </table>
+{% endblock %}
